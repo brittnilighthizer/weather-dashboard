@@ -1,5 +1,5 @@
 body {
-    background-image: url(lightning.jpg);
+    background-image: url(assets/lightning.jpg);
     font-family: Helvetica, Arial, sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
@@ -36,6 +36,11 @@ h1 {
 
 #current-temp {
     font-family: monospace;
+}
+
+#five-day {
+    margin: 40px;
+    padding: 30px;
 }
 
 .city-country {

@@ -17,4 +17,7 @@ $.ajax({
   $(".windspeed").append("...the wind speed is " + response.wind.speed + " MPH");
 //   $(".uv-index").append(response.uvindex);
 // i dont see that listed in the example from th exercise...
+//   $(".five-day").append("...the wind speed is " + response.wind.speed + " MPH");
+
 });
+
