@@ -11,8 +11,10 @@ $.ajax({
   let results = [response.name, response.wind.speed, response.wind.deg, response.main.humidity, response.main.temp,]
   console.log(results);
 
-  $(".current-temp").append("The current temperature is " + Math.floor((response.name - 273.15) * 1.80 + 32) + " &deg;F");
-  $(".humidity").append(response.main.humidity);
-  $(".windspeed").append(response.wind.speed + " MPH, ");
-  $(".uv-index").append(response.uvindex);
+  $(".city-country").append("In " + (response.name) + ", " + (response.sys.country) + "... ");
+  $(".current-temp").append("...the current temperature is " + Math.floor((response.main.temp - 273.15) * 1.80 + 32) + " &deg;F");
+  $(".humidity").append("...the humidity level is " + (response.main.humidity) + " %");
+  $(".windspeed").append("...the wind speed is " + response.wind.speed + " MPH");
+//   $(".uv-index").append(response.uvindex);
+// i dont see that listed in the example from th exercise...
 });
