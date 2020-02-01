@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 <body>
-    
+    <main id="wrapper">
+        <h1>My Janky Weather Dashboard</h1>
+        <div id="dashboard">
+            <section id="search">
+                <!-- input tag -->
+            <input id="searchbar" onkeyup=" " type="text"
+              name="search" placeholder="Enter Zip Code"></section>
+            <div class="city"></div>
+            <div class="current-temp"></div>
+            <div class="humidity"></div>
+            <div class="windspeed"></div>
+            <div class="uv-index"></div>
+        </div>
+        <aside></aside>
+    </main>
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
