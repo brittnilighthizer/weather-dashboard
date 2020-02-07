@@ -12,27 +12,27 @@
 </head>
 <body>
     <main id="wrapper">
-        <h1>My Janky Weather Dashboard</h1>
-        <div id="dashboard">
-            <section id="search">
+        <h1>Weather Dashboard</h1>
+        <aside class="history">
+            <section id="cityInput">
                 <!-- input tag -->
-            <input id="searchbar" onkeyup=" " type="text"
-              name="search" placeholder="Enter Zip Code"></section>
+            <input id="searchbar" type="text" placeholder="Enter City Name">
+              <button id="search">Search</button>
+            </section>
+        </aside>
+        <div id="dashboard">
+            
             <div class="city-country"></div>
             <div class="current-temp"></div>
             <div class="humidity"></div>
             <div class="windspeed"></div>
             <div class="uv-index"></div>
             <br>
-            <div class="five-day">
-                <card><img src="assets/sunny.png" height="100"></card>
-                <card><img src="assets/sunny.png" height="100"></card>
-                <card><img src="assets/partly-sunny.png" height="100"></card>
-                <card><img src="assets/showers.png" height="100"></card>
-                <card><img src="assets/thunderstorms.png" height="100"></card>
+            <div class="five-day" >
+                
             </div>
         </div>
-        <aside></aside>
+
     </main>
 <script type="text/javascript" src="script.js"></script>
 </body>

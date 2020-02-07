@@ -9,6 +9,7 @@ body {
     height: 600px;
     padding: 2%;
     margin: 6px;
+    
 }
 
 h1 {
@@ -16,6 +17,9 @@ h1 {
     background-color: white;
     opacity: 0.7;
     border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+
   }
 #dashboard {
     text-align: left;
@@ -26,9 +30,12 @@ h1 {
     border: 1px solid black;
     padding: 10px;
     font-size: 14px;
+    border-radius: 5px;
+
 }
 #search-bar{
     font-size: 14px;
+    
 }
 #search {
     padding: 10px;
@@ -41,9 +48,36 @@ h1 {
 #five-day {
     margin: 40px;
     padding: 30px;
+    display:inline-block;
 }
 
 .city-country {
     font-size: 20px;
     font-weight: bold;
+}
+
+.fiveDay{
+    display: inline-block;
+    border: 1px solid #666666;
+    padding: 10px;
+    margin: 10px;
+    background-color: #666666;
+    border-radius: 5px;
+}
+
+#history {
+    display: inline-block;
+    border: 1px solid #666666;
+    padding: 10px;
+    margin: 10px;
+    background-color: #666666;
+    border-radius: 5px;
+
+}
+
+.uv-index {
+    padding: 10px;
+    border-radius: 5px;
+    background-color:red;
+    max-width: fit-content;
 }
