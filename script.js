@@ -1,15 +1,13 @@
 var runningHistory = []
 
 $("#search").on("click", function () {
-
 $(".city-country ").empty();
 $(".current-temp").empty();
 $(".humidity ").empty();
 $(".windspeed ").empty();
 $(".uv-index ").empty();
 $(".five-day ").empty();
-$(".history ").empty();
-
+// $(".history ").empty();
 
 var APIKey = "cf033af614b15264df2b80a9a4d6be21";
 var userCity = $("#searchbar").val();
@@ -47,6 +45,7 @@ console.log(response)
     url: fiveDayUrl,
     method: "GET"
   }).then(function(response) {
+    console.log(response)
 
     for (let i = 0; i < 40; i+=9) {
       // var day = //moment
@@ -64,23 +63,23 @@ console.log(response)
     }
 });
 
-
-}).catch(function(response) {
+// fix so this is not always displaying
+})
+.catch(function(response) {
   console.log("failed")
   $("#dashboard").append(userCity + "is not a valid city.");
-
 })
 
-
-
+i=0
+// adjust styling for this to be seen properly
 runningHistory.push(userCity);
-
+i++
 window.localStorage.setItem("#history",JSON.stringify(runningHistory))
 
 var localStorageCity = JSON.parse(window.localStorage.getItem("#history"))
 
-console.log(localStorageCity);
-$(".history").append(localStorageCity);
+// console.log(localStorageCity);
+$(".history").append(localStorageCity[i]);
 
 
   
