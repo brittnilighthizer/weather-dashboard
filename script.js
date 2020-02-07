@@ -46,13 +46,13 @@ console.log(response)
     method: "GET"
   }).then(function(response) {
     console.log(response)
-
+    let addedDays = 1
     for (let i = 0; i < 40; i+=9) {
-      // var day = //moment
-        //<p>${}</p> 
+      let day = moment().add(addedDays, 'days').format('MM/DD/YYYY')
+      addedDays++;
       //add the moment variable above to below jquery object
       let fiveDayForecast = $(`<div class="fiveDay">
-                              
+                              <p><b>${day}</b></p> 
                               <img src=http://openweathermap.org/img/wn/${response.list[i].weather[0].icon}.png>
                               <p><b>Temp</b>:${Math.floor(((response.list[i].main.temp - 273.15) * 1.8) + 32)} degrees</p>
                               <p><b>Humidity</b>:${response.list[i].main.humidity}%</p>

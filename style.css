@@ -22,7 +22,10 @@ h1 {
   }
 #dashboard {
     text-align: left;
-    width: 800px;
+    width: 70%;
+    float: right;
+    vertical-align: top;
+    display: inline-block;
     font-size: 20px;
     background-color: white;
     opacity: 0.9;
@@ -45,8 +48,8 @@ h1 {
 }
 
 #five-day {
-    margin: 40px;
-    padding: 30px;
+    margin: 10px;
+    padding: 10px;
     display:inline-block;
 }
 
@@ -58,10 +61,11 @@ h1 {
 .fiveDay{
     display: inline-block;
     border: 1px solid #666666;
-    padding: 10px;
-    margin: 10px;
+    padding: 5px;
+    margin: 5px;
     background-color: #666666;
     border-radius: 5px;
+    width: 16%;
 }
 
 #history {
@@ -80,4 +84,9 @@ h1 {
     border-radius: 5px;
     background-color:red;
     max-width: fit-content;
+}
+
+aside {
+    width: 25%;
+    display: inline-block;
 }
