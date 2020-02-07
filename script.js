@@ -1,5 +1,5 @@
 var runningHistory = []
-
+render();
 $("#search").on("click", function () {
 $(".city-country ").empty();
 $(".current-temp").empty();
@@ -7,7 +7,7 @@ $(".humidity ").empty();
 $(".windspeed ").empty();
 $(".uv-index ").empty();
 $(".five-day ").empty();
-// $(".history ").empty();
+$("#error").empty();
 
 var APIKey = "cf033af614b15264df2b80a9a4d6be21";
 var userCity = $("#searchbar").val();
@@ -49,10 +49,10 @@ console.log(response)
 
     for (let i = 0; i < 40; i+=9) {
       // var day = //moment
-
+        //<p>${}</p> 
       //add the moment variable above to below jquery object
       let fiveDayForecast = $(`<div class="fiveDay">
-
+                              
                               <img src=http://openweathermap.org/img/wn/${response.list[i].weather[0].icon}.png>
                               <p><b>Temp</b>:${Math.floor(((response.list[i].main.temp - 273.15) * 1.8) + 32)} degrees</p>
                               <p><b>Humidity</b>:${response.list[i].main.humidity}%</p>
@@ -61,27 +61,35 @@ console.log(response)
       $(".five-day").append(fiveDayForecast);
 
     }
+    
+    // adjust styling for this to be seen properly
+    runningHistory.push(userCity);
+    
+    window.localStorage.setItem("#history",JSON.stringify(runningHistory))
+    
+    
+    // console.log(localStorageCity);
+    $(".history").append(userCity);
+    
+    
+
 });
 
 // fix so this is not always displaying
 })
 .catch(function(response) {
+  $("#error").empty();
   console.log("failed")
-  $("#dashboard").append(userCity + "is not a valid city.");
+  $("#error").append(userCity + "is not a valid city.");
 })
-
-i=0
-// adjust styling for this to be seen properly
-runningHistory.push(userCity);
-i++
-window.localStorage.setItem("#history",JSON.stringify(runningHistory))
-
-var localStorageCity = JSON.parse(window.localStorage.getItem("#history"))
-
-// console.log(localStorageCity);
-$(".history").append(localStorageCity[i]);
-
-
+  
   
 });
+function render() {
+  runningHistory = JSON.parse(localStorage.getItem("#history"))
+  for (let i = 0; i < runningHistory.length; i++) {
 
+    const eachCity = runningHistory[i];
+    $(".history").append("<p>" + eachCity + "</p>");
+  }
+}
