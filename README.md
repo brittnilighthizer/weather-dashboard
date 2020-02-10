@@ -1,5 +1,4 @@
-# weather-dashboard
+# Click Below to see the things
+https://brittnilighthizer.github.io/weather-dashboard/
+# Utilizing API:
 https://openweathermap.org/api
-# recall localStorage activities
-store user input (city);
-store as an array (cities)
