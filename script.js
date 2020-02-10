@@ -28,7 +28,7 @@ console.log(response)
 
   var lat = response.coord.lat;
   var lon = response.coord.lon;
-  var uvQuery = "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + lat + "&lon=" + lon;
+  var uvQuery = "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + lat + "&lon=" + lon;
 
   $.ajax({
     url: uvQuery,
@@ -39,7 +39,7 @@ console.log(response)
 
   });
 
-  var fiveDayUrl = "http://api.openweathermap.org/data/2.5/forecast?id=" + response.id + "&appid=" + APIKey;
+  var fiveDayUrl = "https://api.openweathermap.org/data/2.5/forecast?id=" + response.id + "&appid=" + APIKey;
 
   $.ajax({
     url: fiveDayUrl,
@@ -53,7 +53,7 @@ console.log(response)
       //add the moment variable above to below jquery object
       let fiveDayForecast = $(`<div class="fiveDay">
                               <p><b>${day}</b></p> 
-                              <img src=http://openweathermap.org/img/wn/${response.list[i].weather[0].icon}.png>
+                              <img src=https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}.png>
                               <p><b>Temp</b>:${Math.floor(((response.list[i].main.temp - 273.15) * 1.8) + 32)} degrees</p>
                               <p><b>Humidity</b>:${response.list[i].main.humidity}%</p>
                               </div>`)
