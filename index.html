@@ -1,37 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- jQuery -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Dashboard Refactor</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/granim/2.0.0/granim.js"></script>
 </head>
+
 <body>
-    <main id="wrapper">
-        <h1>Weather Dashboard</h1>
-        <aside class="history">
+  <canvas id="canvas-basic"></canvas>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Weather Dashboard
+      </h1>
+      <p class="subtitle">
+        Enter a city to see the current forecast and the five-day forecast.
+      </p>
+      <div class="columns">
+        <div class="column is-one-quarter">
+          <section>
+            <!-- input tag -->
+            <input id="searchbar" class="input is-rounded" type="text" placeholder="Enter City Name">
+            <br>
             <div id="error"></div>
-            <section>
-                <!-- input tag -->
-            <input id="searchbar" type="text" placeholder="Enter City Name">
-              <button id="search">Search</button>
-            </section>
-        </aside>
-        <div id="dashboard">
+            <br>
+            <button id="search" class="button is-rounded">Search</button>
+            <br><br>
+            <div class="history">
+
+            </div>
+          </section>
+
+        </div>
+        <div class="column is-inline-block">
+          <h1 class="title">Weather will populate below...</h1>
+          <div id="dashboard">
             <div class="city-country"></div>
             <div class="current-temp"></div>
             <div class="humidity"></div>
             <div class="windspeed"></div>
             <div class="uv-index"></div>
             <br>
-            <div class="five-day" >
+            <div class="column is-inline-block fiveDay">
+
             </div>
+          </div>
         </div>
-    </main>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style src="style.css"></style>
+  <script src="script.js"></script>
 </body>
+
 </html>
